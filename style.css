@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+    --background-light: #251e42;
+    --background-dark: #1e163e;
+
+    --text-900: #6c788b;
+    --text-800: #8e99aa;
+    --text-600: #ced9eb;
+    --text-300: #e9ecf2;
+
+    --color-html: #ff6600;
+    --color-css: #0051ff;
+    --color-js: #ffee00;
+    --color-figma: #c300ff;
+    --color-dart: #11138b;
+    --color-php: #a443ff;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -7,7 +24,16 @@
     font-family: 'montserrat', sans-serif;
 }
 
+body, html{
+    scroll-behavior: smooth;
+}
+
 body{
+    min-height: 100vh;
+    width: 100%;
+
+    background-color: var(--background-light);
+
     overflow-x: hidden;
 }
 
@@ -20,175 +46,229 @@ header{
     position: sticky;
     top: 0;
 
-    height: 17.5vh;
+    height: 15vh;
     width: 100%;
     padding: 0 5vw;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
-    background-color: #1f1e42;
-}
-
-#logo{
-    font-size: 2.5rem;
-    font-weight: 900;
-
-    color: #e5e4ff;
-
-    cursor: pointer;
-
-    & span{
-        color: #afaee2;
-    }
+    background-color: var(--background-dark);
 }
 
 nav{
-    height: 100%;
     width: auto;
+    height: 100%;
 
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 2.5vw;
-
-    & ul{
-        height: 100%;
-        width: auto;
-
-        display: flex;
-        align-items: center;
-        
-        list-style-type: none;
-        
-        & li{
-            height: 100%;
-            width: 125px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            text-align: center;
-            
-            cursor: pointer;
-            transition: .5s;
-    
-            &:hover{
-                font-weight: 600;
-                color: #fff;
-                background-color: #afaee20f;
-            }
-        }
-        
-        & a{
-            height: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            color: #e5e4ff;
-
-            font-size: 1rem;
-            text-decoration: none;
-
-            transition: .5s;
-        }
-    }
 }
 
-#contact{
-    height: auto;
+ul{
     width: auto;
-    padding: .75rem 1.25rem;
+    height: auto;
 
-    color: #afaee2;
-    background-color: transparent;
-    border: 2px solid #afaee2;
-    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
 
-    font-weight: 800;
-    font-size: 1rem;
+nav > ul > li, nav > ul > li > a{
+    list-style-type: none;
+    text-decoration: none;
+    font-weight: 600;
+    
+    color: var(--text-800);
 
-    cursor: pointer;
-    transition: .5s;
-
+    transition: .2s;
+    
     &:hover{
-        background-color: #afaee2;
-        color: #1f1e42;
+        color: var(--text-300);
     }
 }
+
 
 
 /* MAIN */
 
-main{
-    min-height: 100vh;
-    width: 100vw;
-    padding: 10vh 20vw;
 
-    background-color: #191831;
+main{
+    width: 100%;
+    height: auto;
+    padding: 0 20vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section{
-    height: 40vh;
     width: 100%;
-    padding: 2rem 2.5rem;
-    
+    min-height: 75vh;
+
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-
-    background-color: #111024;
-    border: 4px solid #9896ac;
-    border-radius: 1.5rem;
 }
 
+
+
+/* INTRO */
+
+
 #intro{
+    width: 100%;
+    height: auto;
 
-    & h1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pfp{
+    width: 150px;
+}
+
+#name{
+    margin-top: 1rem;
+
+    font-size: 2.25rem;
+    font-weight: 700;
+
+    color: var(--text-300);
+}
+
+#frontEnd{
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: var(--text-600);
+}
+
+#socials{
+    margin-top: .5rem;
+
+    display: flex;
+    gap: 1.5rem;
+
+    & a, i{
         font-size: 2rem;
-        color: #e5e4ff;
+
+        color: var(--text-800);
+
+        transition: .2s;
+
+        &:hover{
+            color: var(--text-600);
+        }
+    }
+}
+
+
+
+/* ABOUT ME */
+
+
+#aboutMe{
+    height: 90vh;
+}
+
+#aboutMeH2{
+    font-size: 2rem;
+
+    color: var(--text-300);
+}
+
+#info{
+    margin-top: .5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    color: var(--text-600);
+
+    & span{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
     }
 
-    & h2{
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #c2c2dd;
+    & i{
+        color: var(--text-900);
     }
+}
 
-    & #tecnologies{
-        margin-top: 2rem;
-        
-        height: auto;
-        width: auto;
+#aboutMeP{
+    margin-top: 1.25rem;
+
+    padding: 0 4rem;
+
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+
+    color: var(--text-600);
+}
+
+#tecnologies{
+    margin-top: 2rem;
+
+    height: auto;
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+
+    background-color: var(--background-dark);
+    border-radius: 1rem;
+
+    & i{
+        width: 3rem;
+        height: 3rem;
 
         display: flex;
-        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        
+        font-size: 2.5rem;
 
-        font-size: 2rem;
+        color: var(--text-800);
+        transition: .2s;
 
-        & i{
-            width: 62.5px;
-            height: 62.5px;
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
 
-            background-color: #1f1e42;
-            border: 2px solid #c2c2dd;
-            border-radius: .5rem;
+        &.fa-html5:hover{
+            color: var(--color-html);
+        }
 
-            transition: .3s;
+        &.fa-css3-alt:hover{
+            color: var(--color-css);
+        }
 
-            &:hover{
-                transform: scale(1.05);
-            }
+        &.fa-js:hover{
+            color: var(--color-js);
+        }
+
+        &.fa-figma:hover{
+            color: var(--color-figma);
+        }
+
+        &.fa-dart-lang:hover{
+            color: var(--color-dart);
+        }
+
+        &.fa-php:hover{
+            color: var(--color-php);
         }
     }
 }
